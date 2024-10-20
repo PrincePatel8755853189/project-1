@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Frontend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header/Nav -->
+    <header>
+        <nav>
+            <!-- Desktop Menu -->
+            <ul class="desktop">
+                <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+            <!-- Hamburger Menu -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Mobile Menu -->
+            <ul class="mobile">
+                <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+           
+        </div>
+       
+        <a href="#" class="register-btn">Register Now</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="typing">      
+            </div>
+            
+            <div id="text-container"></div>
+        
+        <script>
+            const text = "Lessons and insights from 8 years";
+            let index = 0;
+        
+            function typeLetter() {
+                if (index < text.length) {
+                    document.getElementById("text-container").innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeLetter, 100); // Adjust the speed here (100ms per letter)
+                }
+            }
+        
+            typeLetter();
+        </script>
+          <br>
+            <a href="#" class="cta-btn">Register</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://media.istockphoto.com/id/1248415323/photo/3d-illustration-of-happy-smiling-businessman-in-suit-with-laptop-sitting-in-armchair-cartoon.jpg?s=612x612&w=0&k=20&c=pQQez7m8lNwrlZsJNdCPVixdfCZfA8vQl6Zgmu6D_Vo=" alt="Hero Illustration">
+        </div>
+    </section>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Document Upload Section -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="upload-box p-3 border rounded shadow-sm">
+                    <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"  style="margin-left: 45%;font-size:26px"></i>
+                    <br><br>
+                    <h3 class="section-heading">Upload Your Document</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="documentUpload" class="form-label">Choose Document:</label>
+                            <input type="file" class="form-control" id="documentUpload">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+                </div>
+            </div>
+        
+            <!-- Question Suggestions Section -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="question-box p-3 border rounded shadow-sm">
+                    <i class="fa-solid fa-question" style="margin-left: 45%;font-size:26px"></i>
+                    <br><br>
+                    <h3 class="section-heading" style="text-align:center;">Suggested Questions</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">What is the purpose of this document?</li>
+                        <li class="list-group-item">Can you summarize the main points?</li>
+                        <li class="list-group-item">Who is the author, and what is their expertise?</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Response Display Section -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="response-box p-3 border rounded shadow-sm">
+                    <i class="fa-solid fa-reply" style="margin-left: 45%;font-size:26px"></i>
+                    <br><br>
+                    <h3 class="response-heading">Response with Citations</h3>
+                    
+                    <p id="responseText">Once you submit a query, the response will appear here with relevant citations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Section -->
+<section class="chat-section">
+    <div class="chat-box">
+        <h3 class="section-heading">Chat with us</h3>
+        <div id="chat-window" class="chat-window">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" id="chatInput" class="form-control" placeholder="Type your message here...">
+            <button class="btn btn-success" id="sendBtn">Send</button>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Query Interface</p>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('nav ul.mobile');
+    
+        // Toggle mobile menu visibility when hamburger is clicked
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+
+<script>
+    document.getElementById('sendBtn').addEventListener('click', sendMessage);
+    
+    function sendMessage() {
+        const input = document.getElementById('chatInput').value;
+        if (!input) return;
+    
+        // Append user's message to the chat window
+        const chatWindow = document.getElementById('chat-window');
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('user-message');
+        userMessage.textContent = input;
+        chatWindow.appendChild(userMessage);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    
+        // Clear the input field
+        document.getElementById('chatInput').value = '';
+    
+        // Call the chatbot API
+        fetch('https://your-chatbot-api.com/endpoint', { // Replace with your chatbot API
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: input }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Append the bot's reply to the chat window
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('bot-message');
+            botMessage.textContent = data.reply; // Assuming 'reply' is the field containing the bot's message
+            chatWindow.appendChild(botMessage);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+    </script>
+    
+    
+</body>
+</html>
